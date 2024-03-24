@@ -42,8 +42,13 @@ const routes: Routes = [
     path: 'product1',
     component: Product1Component,
     outlet: 'contenu',
-    canActivateChild: [],
-    children: [{ path: 'edit/:id', component: ProductEditComponent }],
+    canActivateChild: [adminGuard],
+    children: [
+      {
+        path: 'edit/:id',
+        component: ProductEditComponent,
+      },
+    ],
   },
 
   {
