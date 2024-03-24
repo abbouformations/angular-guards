@@ -56,6 +56,12 @@ const routes: Routes = [
     component: Product2Component,
     resolve: { products: ProductListResolver },
     outlet: 'contenu',
+    children: [
+      {
+        path: 'edit/:id',
+        component: ProductEditComponent,
+      },
+    ],
   },
 ];
 
