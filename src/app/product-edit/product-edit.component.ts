@@ -22,7 +22,7 @@ export class ProductEditComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
   ngOnInit(): void {
-    this.produitService.getProduct('2').subscribe({
+    this.produitService.getProduct(<string>this.route.snapshot.paramMap.get("id")).subscribe({
       next: (response) => {
         if (response)
           this.productForm.setValue({
